@@ -1,0 +1,34 @@
+<nav style="background-color: #1E90FF;" class="navbar navbar-expand-lg navbar-dark mb-3">
+    <!-- starting the container -->
+    <div class="container">
+        <a class="navbar-brand" href="/">StoryIdeas</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/about">About</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                {{#if user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Hi {{user.name}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/ideas">Ideas</a>
+                        <a class="dropdown-item" href="/ideas/add">Add new ideas</a>
+                    </div>
+                </li>
+                <a class="nav-item nav-link" href="/users/logout">Logout</a>
+                {{else}}
+                <a class="nav-item nav-link" href="/users/login">Login</a>
+                <a class="nav-item nav-link" href="/users/register">Register</a>
+                {{/if}}
+            </div>
+        </div>
+    </div> <!-- container end -->
+</nav>
