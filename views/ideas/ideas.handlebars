@@ -1,18 +1,28 @@
-{{#each ideas}}
-
-<div class="card card-body mb-2">
-    <h3>{{title}}</h3>
-    <p>{{details}}</p>
-    <div class="row ml-2">
-        <a style="background-color: #1E90FF; color: white;" class="btn mr-2" href="/ideas/edit/{{id}}">Edit</a>
-        <form action="/ideas/{{id}}?_method=DELETE" method="post">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" class="btn btn-danger" value="Delete">
-        </form>
+<div class="col-md-12">
+    <div>
+        <a href="/ideas/add"> 
+            <i id="pulseButton" class="fas fa-plus-circle fa-3x mb-3 float-right"></i>
+        </a>
     </div>
 
 </div>
-{{else}}
-<p>There is no ideas to show</p>
-{{/each}}
+<div class="col-md-12 float-left">
+    {{#each ideas}}
 
+    <div class="card card-body mb-2">
+        <h3>{{title}}</h3>
+        <p>{{details}}</p>
+        <div class="row ml-2">
+            <a style="background-color: #1E90FF; color: white;" class="btn mr-2" href="/ideas/edit/{{id}}">Edit</a>
+            <form action="/ideas/{{id}}?_method=DELETE" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" class="btn btn-danger" value="Delete">
+            </form>
+        </div>
+
+    </div>
+
+    {{else}}
+    <p>There is no ideas to show</p>
+    {{/each}}
+</div>
