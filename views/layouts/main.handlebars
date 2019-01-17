@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,10 @@
         crossorigin="anonymous">
 </head>
 
-<body>
+<body style="height: 100%; display: flex; flex-direction: column;">
     <!-- rendering navbar -->
     {{> _navbar }}
-    <div class="container">
+    <div class="container" style="flex: 1 0 auto;">
         {{> _errors}}
         {{> _msg }}
         {{{ body }}}
